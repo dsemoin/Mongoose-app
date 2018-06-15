@@ -2,7 +2,7 @@
 $.getJSON("/articles", function(data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
-      // Display theninformation on the page
+      // Display the information on the page
       $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
     }
   });
@@ -30,7 +30,7 @@ $.getJSON("/articles", function(data) {
         // A textarea to add a new note body
         $("#comments").append("<textarea id='bodyinput' name='body'></textarea>");
         // A button to submit a new note, with the id of the article saved to it
-        $("#comments").append("<button data-id='" + data._id + "' id='savenote'>Save Comment</button>");
+        $("#comments").append("<button data-id='" + data._id + "' id='savecomment'>Save Comment</button>");
   
         // If there's a comment in the article
         if (data.comment) {
@@ -63,7 +63,7 @@ $.getJSON("/articles", function(data) {
         // Log the response
         console.log(data);
         // Empty the notes section
-        $("#comment").empty();
+        $("#comments").empty();
       });
   
     // Also, remove the values entered in the input and textarea for note entry
